@@ -23,7 +23,7 @@ async def listen():
     ]
 
     async with websockets.connect(uri) as websocket:
-        print("✅ Connected to YOLO stream.")
+        print(" Connected to YOLO stream.")
 
         async for message in websocket:
             if not message:
@@ -33,7 +33,7 @@ async def listen():
             try:
                 data = json.loads(message)
             except json.JSONDecodeError:
-                print("⚠️ Skipping invalid JSON.")
+                print(" Skipping invalid JSON.")
                 continue
 
             # Add current frame as new user message
